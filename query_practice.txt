@@ -1,0 +1,23 @@
+CREATE DATABASE test
+
+CREATE TABLE student(Sid int(11) PRIMARY KEY AUTO_INCREMENT,Name varchar(255),Std int(11))
+
+ALTER TABLE student ADD (Gender varchar(255),DOB varchar(255),Email varchar(255))
+
+ALTER TABLE student DROP Email
+
+ALTER TABLE student ADD (Email varchar(255),Address text,Mobileno text)
+
+
+ALTER TABLE users_tbl CHANGE Address City text;
+
+
+INSERT INTO student(`Sid`, `Name`, `Std`, `Gender`, `DOB`, `Email`, `City`, `Mobileno`) VALUES ('null','kajal','2','female','2016-09-28','kajal@gmail.com','morbi','09876543245')
+
+INSERT INTO student(`Sid`, `Name`, `Std`, `Gender`, `DOB`, `Email`, `City`, `Mobileno`) VALUES ('null','aman','5','male','2010-10-18','aman@gmail.com','surat','09877843245'),
+('null','kamali','6','female','2013-07-25','kamali@gmail.com','vadodara','09876543985'),('null','sachin','1','male','2014-08-08','sachin@gmail.com','vapi','09887653245'),
+('null','jinal','7','female','2013-07-28','jinal@gmail.com','vadodara','76376543245'),('null','shivam','6','male','2013-06-10','shivam@gmail.com','morbi','09876543245')
+
+DELETE FROM student WHERE Sid=2
+
+truncate table student

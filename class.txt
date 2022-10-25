@@ -1,0 +1,94 @@
+CREATE DATABASE student
+
+CREATE TABLE marks(stid int(11) PRIMARY KEY AUTO_INCREMENT,marks int(10))
+
+INSERT INTO marks VALUES('null','85')
+
+INSERT INTO marks VALUES('null','67'),('null','58'),('null','89')
+
+CREATE table students(sid int(11) PRIMARY KEY AUTO_INCREMENT,sname varchar(50))
+
+INSERT into students values('null','kajal')
+
+INSERT into students values('null','sachin'),('null','nitin'),('null','dhara')
+
+ ALTER TABLE student ADD (userid int(11))
+
+ALTER TABLE 'students' ADD FOREIGN KEY ('userid') REFERENCES 'marks'('stid') 
+
+UPDATE students SET userid = 4 WHERE students.sid = 4;
+UPDATE students SET userid = 3 WHERE students.sid = 3;
+UPDATE students SET userid = 2 WHERE students.sid = 2
+UPDATE students SET userid = 1 WHERE students.sid = 1
+
+INSERT INTO marks VALUES ('','45'),('','75'),('','98'),('','38')
+
+INSERT INTO students VALUES ('','radhika',''), ( '','sanjay','5'),('','jalpa',''),('','rajan','7'), ( '','suman','6'),('','divya','8')
+
+select sname,marks from students join marks on students.userid=marks.stid
+
+select sname,marks from students join marks on students.userid=marks.stid WHERE marks>60
+
+select sname,marks from students join marks on students.userid=marks.stid WHERE marks>75 or marks<85
+
+select sname,marks from students join marks on students.userid=marks.stid WHERE marks>75 and marks<85
+
+select sname,marks from students left join marks on students.userid=marks.stid
+
+select sname,marks from students left join marks on students.userid=marks.stid where marks is null
+
+select sname,marks from students right join marks on students.userid=marks.stid
+
+create TABLE result(rid int(11))
+
+ALTER table result add (name varchar(24),persantage text)
+
+alter table result change persantage PR text
+
+ALTER table result drop COLUMN PR
+
+alter table result ADD (pr text,grade text)
+
+INSERT INTO `result`(`rid`, `name`, `pr`, `grade`) VALUES ('1','kajal','85','A'),('2','satis','65','B'),('3','neha','80','A'),('4','gautam','70','B')
+
+UPDATE result SET name='kamal' WHERE rid='2'
+
+DELETE FROM 'result' WHERE rid='3'
+
+TRUNCATE table result
+
+DROP table result
+
+SELECT DISTINCT(Name) FROM student where Name like'%j%'
+
+CREATE VIEW studentdata as SELECT Name,Std,City FROM student
+
+SELECT DISTINCT(Name)as Name,Sid FROM student where Name like'%j%'
+
+create index stdname on student(Name)
+
+CREATE PROCEDURE getdataendwith(INOUT snamechar varchar(50))
+SELECT * from student where Name like concat('%',snamechar,'%')
+
+SET @p0='j'; CALL `getdataendwith`(@p0); SELECT @p0 AS `snamechar`;
+
+CREATE TRIGGER studentdatabk BEFORE UPDATE ON student FOR EACH ROW insert INTO studentdatabk SET Sid=OLD.Sid, Mobileno=OLD.Mobileno, date=now()
+
+CREATE PROCEDURE getmaxsalary(INOUT department varchar(50)) SELECT DEPARTMENT,MAX(SALARY) MAX_SALARY FROM employee WHERE DEPARTMENT= dept
+
+SET @p0='BANKING'; CALL `getmaxsalary`(@p0); SELECT @p0 AS `department`;
+
+ Routine `getmaxsalary` has been modified.
+DROP PROCEDURE `getmaxsalary`; CREATE DEFINER=`root`@`localhost` 
+PROCEDURE `getmaxsalary`(INOUT `dept` VARCHAR(50)) NOT DETERMINISTIC CONTAINS SQL SQL SECURITY DEFINER SELECT DEPARTMENT,MAX(SALARY) FROM employee WHERE DEPARTMENT="dept"
+
+
+DROP PROCEDURE `getmaxsalary`; CREATE DEFINER=`root`@`localhost` PROCEDURE `getmaxsalary`(INOUT `dept` VARCHAR(50)) NOT DETERMINISTIC CONTAINS SQL SQL SECURITY DEFINER SELECT DEPARTMENT,MAX(SALARY) MAX_SALARY FROM employee WHERE DEPARTMENT='DEPT' GROUP BY DEPARTMENT
+
+TRIGGER `view_of_employee` BEFORE INSERT ON `employee` FOR EACH ROW insert INTO view_of_employee SET FIRST_NAME=NEW.FIRST_NAME, LAST_NAME=NEW.LAST_NAME, SALARY=NEW.SALARY
+
+
+
+
+DROP TRIGGER IF EXISTS `EMPLOYEE_VIEW`;CREATE DEFINER=`root`@`localhost` TRIGGER `EMPLOYEE_VIEW` AFTER INSERT ON `employee` FOR EACH ROW INSERT INTO employee_view SET FIRST_NAME=NEW.FIRST_NAME, LAST_NAME=NEW.LAST_NAME, SALARY=NEW.SALARY
+INSERT INTO `employee`(`EM_ID`, `FIRST_NAME`, `LAST_NAME`, `SALARY`, `JOINING_DATE`, `DEPARTMENT`) VALUES ('','eefe','fvsedfv','ag','gzsd','dvsd')
