@@ -74,7 +74,7 @@ SET @p0='j'; CALL `getdataendwith`(@p0); SELECT @p0 AS `snamechar`;
 
 CREATE TRIGGER studentdatabk BEFORE UPDATE ON student FOR EACH ROW insert INTO studentdatabk SET Sid=OLD.Sid, Mobileno=OLD.Mobileno, date=now()
 
-CREATE PROCEDURE getmaxsalary(INOUT department varchar(50)) SELECT DEPARTMENT,MAX(SALARY) MAX_SALARY FROM employee WHERE DEPARTMENT= dept
+CREATE PROCEDURE getmaxsalary(INOUT dept varchar(50)) SELECT DEPARTMENT,MAX(SALARY) MAX_SALARY FROM employee WHERE DEPARTMENT= dept
 
 SET @p0='BANKING'; CALL `getmaxsalary`(@p0); SELECT @p0 AS `department`;
 
@@ -92,3 +92,13 @@ TRIGGER `view_of_employee` BEFORE INSERT ON `employee` FOR EACH ROW insert INTO 
 
 DROP TRIGGER IF EXISTS `EMPLOYEE_VIEW`;CREATE DEFINER=`root`@`localhost` TRIGGER `EMPLOYEE_VIEW` AFTER INSERT ON `employee` FOR EACH ROW INSERT INTO employee_view SET FIRST_NAME=NEW.FIRST_NAME, LAST_NAME=NEW.LAST_NAME, SALARY=NEW.SALARY
 INSERT INTO `employee`(`EM_ID`, `FIRST_NAME`, `LAST_NAME`, `SALARY`, `JOINING_DATE`, `DEPARTMENT`) VALUES ('','eefe','fvsedfv','ag','gzsd','dvsd')
+
+SELECT tblstudents.StudentId,tblstudents.StudentName,tblresult.marks,tblsubjects.SubjectName from tblresult JOIN tblstudents ON tblresult.StudentId=tblstudents.StudentId JOIN tblsubjects ON tblresult.SubjectId=tblsubjects.id
+
+SELECT tblstudents.StudentId,tblstudents.StudentName,tblresult.marks,tblsubjects.SubjectName from tblresult JOIN tblstudents ON tblresult.StudentId=tblstudents.StudentId JOIN tblsubjects ON tblresult.SubjectId=tblsubjects.id GROUP BY tblstudents.StudentId
+
+SELECT tblstudents.StudentId,tblstudents.StudentName,sum(tblresult.marks) from tblresult JOIN tblstudents ON tblresult.StudentId=tblstudents.StudentId JOIN tblsubjects ON tblresult.SubjectId=tblsubjects.id GROUP BY tblstudents.StudentId
+
+SELECT tblstudents.StudentId,tblstudents.StudentName,sum(tblresult.marks) AS Total_marks,Max(tblresult.marks) AS Max_marks,MIN(tblresult.marks) As Min_marks,AVG(tblresult.marks) AS PR from tblresult JOIN tblstudents 
+ON tblresult.StudentId=tblstudents.StudentId JOIN tblsubjects ON tblresult.SubjectId=tblsubjects.id GROUP BY tblstudents.StudentId
+
