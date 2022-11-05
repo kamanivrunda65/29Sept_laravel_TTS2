@@ -13,6 +13,7 @@
     </h3>
 
     <ul>
+    <li>PHP supports HTML but HTML doesnt supports the PHP thats why we aleays create .php extension pages</li>
         <li>PHP is a server scripting language, and a powerful tool for making dynamic and interactive Web pages.</li>
         <li>PHP is an acronym for "PHP: Hypertext Preprocessor".</li>
         <li> PHP is a widely-used, open source scripting language</li>
@@ -25,10 +26,15 @@
         <li>PHP can be used to build both static and dynamic web pages and web-based applications. Developers can manipulate the coding to reuse it in other applications too.</li>            <li> Some of the best Web Content Management Systems (CMS) managed by PHP are WordPress and its plugins, user interface of Drupal, Joomla, Facebook, MediaWiki, Silverstripe, and Digg, among others. </li>
         <li>PHP can be for creating desktop Graphical User Interface (GUI) based applications. </li>
         <li>its simple to create and incorporate flash elements like login-form and email form into dynamic web pages with the use of PHP.</li>
-        <li></li>
+        <li>PHP performs system functions, i.e. from files on a system it can create, open, read, write, and close them.</li>
+        <li>PHP can handle forms, i.e. gather data from files, save data to a file, through email you can send data, return data to the user.</li>
+        <li>You add, delete, modify elements within your database through PHP.</li>
+        <li>Access cookies variables and set cookies</li>
+        <li>Using PHP, you can restrict users to access some pages of your website.</li>
+        <li>It can encrypt data.</li>
     </ul>
 
-    <p>PHP supports HTML but HTML doesnt supports the PHP thats why we aleays create .php extension pages</p>
+    
 
 </body>
 </html>
