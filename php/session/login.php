@@ -9,33 +9,22 @@ include_once("header.php");
                         <center><h3 style="padding-top:10px;font-style: italic;">Login form</h3></center> 
                         <br>
                          <div class="card-body" style="padding-left: 30px;padding-right:30px;">
-                        <form>
+                        <form method="post">
                             <div class="row mb-3">
                                                               
-                                <input type="text" class="form-control"  placeholder="Email ID">
-                              
-                             
-                                
-                               
-                              
+                                <input type="text" class="form-control" name="username"  placeholder="User Name">
                             </div>
                             <div class="row mb-3">
-                                <input type="password" class="form-control" id="" placeholder="Password">
+                                <input type="password" class="form-control" name="password" placeholder="Password">
                             </div>
                             <div class="row mt-3">
                                 <div class="col text-center">
-                                    <input type="submit" class="btn btn-info " name="Login" id="">
+                                    <input type="submit" class="btn btn-info " name="login" value="Login">
                                    
                                 </div>
                             </div>
                         </form>
-                        <hr><center><t>Or Login With</t><br>
-                            <a href="#" class="fa fa-google"></a>
-                            <a href="#" class="fa fa-twitter"></a>
-                            <a href="#" class="fa fa-facebook"></a>
-                            <br>
-                            <t>not a menber?<a href="registration_from.html">Signup now</a></t>
-                        </center>
+                        
 
 
                         </div>

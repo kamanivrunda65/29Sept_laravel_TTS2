@@ -1,3 +1,26 @@
+<?php
+session_start();
+if (isset($_POST['login'])) {
+     echo "<pre>";
+     print_r($_REQUEST);
+     print_r($_POST);
+    if ($_POST['username'] == "ABC" && $_POST['password'] == "123" ) { 
+            $_SESSION['UserData'] = array("username"=>"ABC","Location"=>"PQR");
+            
+        ?>
+            <script>
+                alert('Login success')
+                window.location.href = "dashboard.php";
+            </script>
+    <?php
+    }else{
+        echo "<script>alert('Invalid user')</script>";
+    }
+    # code...
+}
+echo "</pre>";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +28,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    
     <link href="https://getbootstrap.com/docs/5.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 </head>
 <body>
@@ -17,7 +41,7 @@
         </a>
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-          <li><a href="index.php" class="nav-link px-4 text-secondary">Home</a></li>
+          <li><a href="index.php" class="nav-link px-4 text-white">Home</a></li>
           <li><a href="feature.php" class="nav-link px-4 text-white">Features</a></li>
           <li><a href="contact.php" class="nav-link px-4 text-white">Contact</a></li>
           <li><a href="product.php" class="nav-link px-4 text-white">Products</a></li>
@@ -29,34 +53,26 @@
         </form>
 
         <div class="text-end">
+            <?php if (isset($_SESSION['UserData'])) { ?>
+          <a href="logout.php"><button type="button" class="btn btn-outline-light me-2">Logout</button></a>
+          <?php } else { ?>
           <a href="login.php"><button type="button" class="btn btn-outline-light me-2">Login</button></a>
-          <a href="singup.php"><button type="button" class="btn btn-warning">Sign-up</button></a>
+        <a href="singup.php"><button type="button" class="btn btn-warning">Sign-up</button></a>
+          <?php } ?>
+                              
         </div>
       </div>
     </div>
-    <style>
-    .fa {
-  padding: 10px;
-  font-size: 30px;
-  width: 50px;
-  text-align: center;
-  text-decoration: none;
-  border-radius: 50%;
-    }
-  .fa:hover {opacity: 0.7;}
-
-  .fa-facebook {color:  #3B5998;}
-
-  .fa-twitter {color:  #55ACEE;}
-
-  .fa-google {color:#d81010;}
-   </style>
   </header>
 
 
     </main>
     
     <script src="https://getbootstrap.com/docs/5.2/dist/js/bootstrap.bundle.min.jss" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-    
+    <script>
+        if (window.history.replaceState) {
+            window.history.replaceState(null, null, window.location.href);
+        }
+    </script>
 
 
