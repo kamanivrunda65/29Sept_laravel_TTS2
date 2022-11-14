@@ -19,7 +19,7 @@ include_once("header.php");
                             </div>
                             <div class="row mt-3">
                                 <div class="col text-center">
-                                    <input type="submit" class="btn btn-info " name="login" value="Login">
+                                    <input type="submit" class="btn btn-info " name="login" value="login">
                                    
                                 </div>
                             </div>

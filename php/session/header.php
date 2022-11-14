@@ -18,6 +18,26 @@ if (isset($_POST['login'])) {
     }
     # code...
 }
+if (isset($_POST['product1'])){
+  
+    $_SESSION['UserData1'] = array("product_name1"=>"Women Angarkha and Dhoti Pant Viscose Rayon","rs1"=>"500");?>
+    <script>window.location = "dashboard.php";</script><?php
+}
+if (isset($_POST['product2'])){
+  
+  $_SESSION['UserData2'] = array("product_name2"=>"Ruby Red Fully Sequined Georgette Party Wear Saree","rs2"=>"1500");?>
+  <script>window.location = "dashboard.php";</script><?php
+}
+if (isset($_POST['product3'])){
+  
+  $_SESSION['UserData3'] = array("product_name3"=>"Navy Blue Stone Thread Embroidered Anarkali Gown","rs3"=>"4000");?>
+  <script>window.location = "dashboard.php";</script><?php
+}
+if (isset($_POST['product4'])){
+  
+  $_SESSION['UserData4'] = array("product_name4"=>"Attractive Black Sequence Butterfly Net Anarkali Suit","rs4"=>"4500");?>
+  <script>window.location = "dashboard.php";</script><?php
+}
 echo "</pre>";
 ?>
 
@@ -27,7 +47,7 @@ echo "</pre>";
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Session</title>
     
     <link href="https://getbootstrap.com/docs/5.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 </head>
@@ -67,12 +87,23 @@ echo "</pre>";
 
 
     </main>
-    
+      <!-- JavaScript Bundle with Popper -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <script src="https://getbootstrap.com/docs/5.2/dist/js/bootstrap.bundle.min.jss" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     <script>
         if (window.history.replaceState) {
             window.history.replaceState(null, null, window.location.href);
         }
     </script>
+    <style>
+      tr,th,td{
+        border: 1px solid ;
+        padding: 8px;
+      }
+    </style>
 
 
