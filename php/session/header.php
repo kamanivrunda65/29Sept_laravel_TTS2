@@ -18,26 +18,7 @@ if (isset($_POST['login'])) {
     }
     # code...
 }
-if (isset($_POST['product1'])){
-  
-    $_SESSION['UserData1'] = array("product_name1"=>"Women Angarkha and Dhoti Pant Viscose Rayon","rs1"=>"500");?>
-    <script>window.location = "dashboard.php";</script><?php
-}
-if (isset($_POST['product2'])){
-  
-  $_SESSION['UserData2'] = array("product_name2"=>"Ruby Red Fully Sequined Georgette Party Wear Saree","rs2"=>"1500");?>
-  <script>window.location = "dashboard.php";</script><?php
-}
-if (isset($_POST['product3'])){
-  
-  $_SESSION['UserData3'] = array("product_name3"=>"Navy Blue Stone Thread Embroidered Anarkali Gown","rs3"=>"4000");?>
-  <script>window.location = "dashboard.php";</script><?php
-}
-if (isset($_POST['product4'])){
-  
-  $_SESSION['UserData4'] = array("product_name4"=>"Attractive Black Sequence Butterfly Net Anarkali Suit","rs4"=>"4500");?>
-  <script>window.location = "dashboard.php";</script><?php
-}
+ 
 echo "</pre>";
 ?>
 
@@ -75,11 +56,13 @@ echo "</pre>";
         <div class="text-end">
             <?php if (isset($_SESSION['UserData'])) { ?>
           <a href="logout.php"><button type="button" class="btn btn-outline-light me-2">Logout</button></a>
+          
+
           <?php } else { ?>
           <a href="login.php"><button type="button" class="btn btn-outline-light me-2">Login</button></a>
         <a href="singup.php"><button type="button" class="btn btn-warning">Sign-up</button></a>
           <?php } ?>
-                              
+          <a href="dashboard.php"><button type="button" class="btn btn-outline-light me-2">Cart</button></a>                  
         </div>
       </div>
     </div>
@@ -105,5 +88,5 @@ echo "</pre>";
         padding: 8px;
       }
     </style>
-
+   
 

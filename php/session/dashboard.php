@@ -4,59 +4,70 @@ if (isset($_SESSION['UserData'])) {
     $abc=$_SESSION['UserData']['username'];?><h2><?php
     echo $abc;
 }
-?><br>
+
+   
+   
+?></h2><br>
 <br><center>
-<table>
+<table><?php if (isset($_SESSION['cartdata'])){ ?>
     <tr>
         <th>Product Name</th>
         <th>Price</th>
+        <th></th>
+
     </tr>
-    <tr>
+    <tr><?php } ?>
 <?php
-    if (isset($_SESSION['UserData1'])) {
-    $name=$_SESSION['UserData1']['product_name1'];
-    $rs=$_SESSION['UserData1']['rs1'];
+    if (isset($_SESSION['cartdata']['product1'])) {
+    $name=$_SESSION['cartdata']['product1']['productname'];
+    $rs=$_SESSION['cartdata']['product1']['productprize'];
     ?><td><?php echo $name;?></td><?php
     ?><td><?php echo $rs;?></td><?php
+    ?><td><a href="deletecart.php?did=1"><input type="button" value="Delete"></a></td><?php
+    
     
 }
 ?>
     </tr>
     <tr>
 <?php
-    if (isset($_SESSION['UserData2'])) {
-    $name=$_SESSION['UserData2']['product_name2'];
-    $rs=$_SESSION['UserData2']['rs2'];
+    if (isset($_SESSION['cartdata']['product2'])) {
+    $name=$_SESSION['cartdata']['product2']['productname'];
+    $rs=$_SESSION['cartdata']['product2']['productprize'];
     ?><td><?php echo $name;?></td><?php
     ?><td><?php echo $rs;?></td><?php
+    ?><td><a href="deletecart.php?did=2"><input type="button" value="Delete"></a></td><?php
     
 }
 ?>
     </tr>
     <tr>
 <?php
-    if (isset($_SESSION['UserData3'])) {
-    $name=$_SESSION['UserData3']['product_name3'];
-    $rs=$_SESSION['UserData3']['rs3'];
+    if (isset($_SESSION['cartdata']['product3'])) {
+    $name=$_SESSION['cartdata']['product3']['productname'];
+    $rs=$_SESSION['cartdata']['product2']['productprize'];
     ?><td><?php echo $name;?></td><?php
     ?><td><?php echo $rs;?></td><?php
+    ?><td><a href="deletecart.php?did=3"><input type="button" value="Delete"></a></td><?php
     
 }
 ?>
     </tr>
     <tr>
 <?php
-    if (isset($_SESSION['UserData4'])) {
-    $name=$_SESSION['UserData4']['product_name4'];
-    $rs=$_SESSION['UserData4']['rs4'];
+    if (isset($_SESSION['cartdata']['product4'])) {
+    $name=$_SESSION['cartdata']['product4']['productname'];
+    $rs=$_SESSION['cartdata']['product4']['productprize'];
     ?><td><?php echo $name;?></td><?php
     ?><td><?php echo $rs;?></td><?php
+    ?><td><a href="deletecart.php?did=4"><input type="button" value="Delete"></a></td><?php
    
 }
 ?>
     </tr>
     
 </table>
+<a href="deletecart.php?aid=1">Empty cart</a>
 </center>
 <?php
 include_once("footer.php");
