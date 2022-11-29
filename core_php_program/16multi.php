@@ -6,7 +6,7 @@ $balance=array(
     array(4.65,76.8,97.6,87.57,54.65));
     for($i=0;$i<3;$i++){
         for($j=0;$j<5;$j++){
-            echo $balance[$i][$j]." ";
+            echo $balance[$i][$j] ."&emsp;";
 
         }
         echo "<br>";
