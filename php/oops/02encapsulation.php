@@ -13,13 +13,13 @@ echo "<li>Classes are nothing without objects! We can create multiple objects fr
 
 echo "<li>Objects of a class are created using the new keyword.</li>";
 
-class addition{
+class add{
     function addition($a,$b){
        
         return $a+$b;
     }
 }
-$Math = new addition;
+$Math = new add;
  function addition($a,$b,$c){
      
      return $a+$b+$c;
@@ -32,7 +32,5 @@ echo "<br>";
 echo "Data not pass by class object function=".addition(835,745,674);
 
 
-echo "<li></li>";
-echo "<li></li>";
-echo "<li></li>";
+
 echo "</ul></pre>";
