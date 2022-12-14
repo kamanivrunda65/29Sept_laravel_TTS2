@@ -1,6 +1,6 @@
 <?php
 echo "<pre>Class And Object<ul>";
-
+echo "<li>The wrapping up of data and methods into a single unit (called class) is known as encapsulation.</li>";
 echo "<li>Classes and objects are the two main aspects of object-oriented programming.</li>";
 echo "<li>a class is a template for objects, and an object is an instance of a class.</li>";
 echo "<li>When the individual objects are created, they inherit all the properties and behaviors from the class, but each object will have different values for the properties.</li>";
@@ -34,3 +34,4 @@ echo "Data not pass by class object function=".addition(835,745,674);
 
 
 echo "</ul></pre>";
+?>

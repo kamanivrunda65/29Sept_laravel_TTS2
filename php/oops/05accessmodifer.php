@@ -22,6 +22,8 @@ $abc=new inheritclass;
 echo "<br>main class 4*5=>".$abc->f1(4,5)."<br>";
 echo "<br>inherit class 5*5*5=>".$abc->f2(5,5,5)."<br>";
 echo $abc->publicvariable."=>accessible within class and out side of class too<br>";
+echo "<br>class is collection of datmember and member function.<br>";
+
 echo "<br>datamember is variable which is used for entire class<br>";
 echo "<br>to declair datamember we user public,protected and private keywords.<br>";
 echo "<br>And that datamember access by (this) keyword.<br>";
