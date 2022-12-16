@@ -1,7 +1,8 @@
 <?php
 echo "<pre>OOPS- Object-oriented programming language.<ul>";
 
-echo "<li>Procedural programming is about writing procedures or functions that perform operations on the data, while object-oriented programming is about creating objects that contain both data and functions.</li>";
+echo "<li>Procedural programming is about writing procedures or functions that perform operations on the data, while object-oriented 
+programming is about creating objects that contain both data and functions.</li>";
 echo "<li>OOP helps to keep the PHP code DRY-Dont Repeat Yourself, and makes the code easier to maintain, modify and debug.</li>";
 echo "<li>OOP makes it possible to create full reusable applications with less code and shorter development time.</li>";
 echo "<li>function declatration time parameter for recieving the value for making function dynamic.</li>";

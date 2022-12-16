@@ -8,7 +8,8 @@ echo "<li>Ex.... we have a class named Fruit. A Fruit can have properties like n
 
 
 
-echo "<li>Classes are nothing without objects! We can create multiple objects from a class. Each object has all the properties and methods defined in the class, but they will have different property values.</li>";
+echo "<li>Classes are nothing without objects! We can create multiple objects from a class. Each object has all the properties
+ and methods defined in the class, but they will have different property values.</li>";
 
 
 echo "<li>Objects of a class are created using the new keyword.</li>";

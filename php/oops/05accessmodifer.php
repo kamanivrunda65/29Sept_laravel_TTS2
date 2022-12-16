@@ -4,7 +4,7 @@ class accessdatamember{
     public $publicvariable="public value";
     protected $protectedvariable="producted value";
     private $privatevariable="private value";
-    function f1($a,$b){
+    public function f1($a,$b){
         
         echo $this->privatevariable."=just accesseible inside class<br>";
         return $a*$b;
@@ -14,7 +14,7 @@ class accessdatamember{
 class inheritclass extends accessdatamember{
     function f2($a,$b,$c){
         echo $this->protectedvariable."=not accessible out side of class too exept inherited class<br>";
-
+        
         return $a*$b*$c;
             }
 }
@@ -23,7 +23,7 @@ echo "<br>main class 4*5=>".$abc->f1(4,5)."<br>";
 echo "<br>inherit class 5*5*5=>".$abc->f2(5,5,5)."<br>";
 echo $abc->publicvariable."=>accessible within class and out side of class too<br>";
 echo "<br>class is collection of datmember and member function.<br>";
-
+echo "private varible access through public function =>".$abc->f1(76,86);
 echo "<br>datamember is variable which is used for entire class<br>";
 echo "<br>to declair datamember we user public,protected and private keywords.<br>";
 echo "<br>And that datamember access by (this) keyword.<br>";
