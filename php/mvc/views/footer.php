@@ -13,7 +13,7 @@
 				</div>
 			</div>
 			<div class="col-xs-4 w3l-rightmk">
-				<img src="images/tab3.png" alt=" ">
+				<img src="assets/images/tab3.png" alt=" ">
 			</div>
 			<div class="clearfix"></div>
 		</div>
@@ -180,10 +180,10 @@
 					<div class="agileits_app-devices">
 						<h5>Download the App</h5>
 						<a href="#">
-							<img src="images/1.png" alt="">
+							<img src="assets/images/1.png" alt="">
 						</a>
 						<a href="#">
-							<img src="images/2.png" alt="">
+							<img src="assets/images/2.png" alt="">
 						</a>
 						<div class="clearfix"> </div>
 					</div>
@@ -319,31 +319,31 @@
 					<h5>Payment Method</h5>
 					<ul>
 						<li>
-							<img src="images/pay2.png" alt="">
+							<img src="assets/images/pay2.png" alt="">
 						</li>
 						<li>
-							<img src="images/pay5.png" alt="">
+							<img src="assets/images/pay5.png" alt="">
 						</li>
 						<li>
-							<img src="images/pay1.png" alt="">
+							<img src="assets/images/pay1.png" alt="">
 						</li>
 						<li>
-							<img src="images/pay4.png" alt="">
+							<img src="assets/images/pay4.png" alt="">
 						</li>
 						<li>
-							<img src="images/pay6.png" alt="">
+							<img src="assets/images/pay6.png" alt="">
 						</li>
 						<li>
-							<img src="images/pay3.png" alt="">
+							<img src="assets/images/pay3.png" alt="">
 						</li>
 						<li>
-							<img src="images/pay7.png" alt="">
+							<img src="assets/images/pay7.png" alt="">
 						</li>
 						<li>
-							<img src="images/pay8.png" alt="">
+							<img src="assets/images/pay8.png" alt="">
 						</li>
 						<li>
-							<img src="images/pay9.png" alt="">
+							<img src="assets/images/pay9.png" alt="">
 						</li>
 					</ul>
 				</div>
@@ -357,7 +357,7 @@
 	<div class="copy-right">
 		<div class="container">
 			<p>© 2017 Grocery Shoppy. All rights reserved | Design by
-				<a href="http://w3layouts.com"> W3layouts.</a>
+				<a href="#"> W3layouts.</a>
 			</p>
 		</div>
 	</div>
