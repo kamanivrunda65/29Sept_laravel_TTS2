@@ -33,7 +33,16 @@ class controller extends model{
                     include_once('views/signup.php');
                     include_once('views/footer.php');
                     if(isset($_REQUEST['register'])){
+                        array_pop($_REQUEST);//to cut last add request name(submit button)
+                        array_pop($_REQUEST);
                         print_r($_REQUEST);
+                        $Res=$this->insert("users",$_REQUEST);
+                        if($Res['Code'] == 1){
+                            header("location:login");
+                        }
+                        else{
+                            echo "Error";
+                        }
                     }
                     break;
                 default :

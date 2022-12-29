@@ -1,19 +1,21 @@
 <?php
 
 // echo "<pre>";
-// phpinfo();
+//phpinfo();
 // exit;
-error_reporting(E_ALL);//stop to show error
+//error_reporting(E_ALL);//stop to show error
 
 // mysqli_report();
-mysqli_report(MYSQLI_REPORT_ALL) ;//used for version php 7
+//mysqli_report(MYSQLI_REPORT_ALL) ;//used for version php 7
 date_default_timezone_set('Asia/Kolkata');    //to set to current location time
 class model{
+    public $connection="";
     public function __construct(){
     
         try {
     
-                $connection = new mysqli("localhost","root1","", "test");//connect to databse
+                $this->connection = new mysqli("localhost","root","", "test");//connect to database
+                
                 
             } catch (Exception $e) {
                 $errormsg= $e->getMessage();//for only erroe msg
@@ -26,7 +28,26 @@ class model{
             }
     
     }
-    public function insert(){}
+    public function insert($table,$data){
+        $arraykey=implode(",",array_keys($data));
+        $arrayvalue=implode("','",$data);
+        //$id=$table."_id";
+        //$date=date('d-m-Y H:i:s A');
+        $SQL="INSERT INTO $table ($arraykey,date) VALUES ('$arrayvalue','".date('d-m-Y H:i:s A')."')";
+        print_r($SQL);
+        $SQLEx=$this->connection->query($SQL);
+        if ($SQLEx > 0) {
+            $ResponseData['Code']="1";
+            $ResponseData['Msg']="Success";
+            $ResponseData['Data']="1";
+        }else{
+            $ResponseData['Code']="0";
+            $ResponseData['Msg']="Error while inserting";
+            $ResponseData['Data']="0";
+        }
+        return $ResponseData;
+
+    }
     public function update(){}
     public function delete(){}
     public function select(){}
