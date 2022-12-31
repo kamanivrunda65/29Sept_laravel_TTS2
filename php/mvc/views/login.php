@@ -16,16 +16,16 @@
 						<p>
 							Sign In now, Let's start your Grocery Shopping. Don't have an account?
 							<a href="#" data-toggle="modal" data-target="#myModal2">
-								Sign Up Now</a>
+								Login Now</a>
 						</p>
 						<form action="#" method="post">
 							<div class="styled-input agile-styled-input-top">
-								<input type="text" placeholder="User Name" name="Name" required="">
+								<input type="text" placeholder="User Name" name="username" required="">
 							</div>
 							<div class="styled-input">
 								<input type="password" placeholder="Password" name="password" required="">
 							</div>
-							<input type="submit" value="Sign In">
+							<input type="submit" value="Login" name="login">
 						</form>
 						<div class="clearfix"></div>
 					</div>

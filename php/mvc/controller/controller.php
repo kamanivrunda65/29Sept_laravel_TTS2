@@ -5,6 +5,7 @@ class controller extends model{
 
     public function __construct(){
         parent::__construct();
+        ob_start();
         $BaseURL="http://localhost/29Sept_laravel_TTS2/php/mvc/";
         if(isset($_SERVER['PATH_INFO'])){
             switch($_SERVER['PATH_INFO']){
@@ -27,6 +28,25 @@ class controller extends model{
                     include_once('views/header.php');
                     include_once('views/login.php');
                     include_once('views/footer.php');
+                    if (isset($_REQUEST['login'])) {
+                        $Res = $this->login($_POST['username'],$_POST['password']);
+                        // echo "<pre>";
+                        // print_r($Res);
+                        // echo "</pre>";
+                        if ($Res['Code'] == 1) {
+                             $_SESSION['UserData']= $Res['Data'][0];
+                            if ($Res['Data'][0]->role_id == 1) {
+                                header("location:admindashboard");
+                            } else {
+                                header("location:home");
+                             }
+                            
+                        }else {
+                                echo "<script>alert('invalid user crediantials')</script>";
+                            } 
+                         }
+            
+                    
                     break;
                 case '/signup':
                     include_once('views/header.php');
@@ -53,6 +73,8 @@ class controller extends model{
         else{
             header("location:home");
         }
+        ob_flush();
+
     }
 }
 $controller=new controller;

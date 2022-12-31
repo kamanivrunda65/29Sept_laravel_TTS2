@@ -48,9 +48,38 @@ class model{
         return $ResponseData;
 
     }
+    public function login($username,$password){
+        $SQL="SELECT * FROM users WHERE password='$password' AND ( name='$username' OR email='$username')";
+        $SQLEx=$this->connection->query($SQL);
+        if ($SQLEx->num_rows > 0) {
+            // $SQLExFetch = $SQLEx->fetch_all(); //mulitple data with array formate
+            // $SQLExFetch = $SQLEx->fetch_array(); //single data with numeric and associative array formate
+            // $SQLExFetch = $SQLEx->fetch_assoc(); //single data with only associative array formate
+            // $SQLExFetch = $SQLEx->fetch_column(); //1-0 res
+            // $SQLExFetch = $SQLEx->fetch_field(); //database table record info
+            // $SQLExFetch = $SQLEx->fetch_fields();//database table record info
+            // $SQLExFetch = $SQLEx->fetch_row(); //single data with only numeric array formate
+            // $SQLExFetch = $SQLEx->fetch_object();//returns an object
+            while ($SQLExFetch = $SQLEx->fetch_object()) {
+                $SqlFetchData[]=$SQLExFetch;
+            }
+            $ResponseData['Code']="1";
+            $ResponseData['Msg']="Success";
+            $ResponseData['Data']=$SqlFetchData;
+        }
+        else {    
+            $ResponseData['Code']="0";
+            $ResponseData['Msg']="Error while inserting";
+            $ResponseData['Data']="0";
+        }
+        
+        return $ResponseData;
+
+    }
     public function update(){}
     public function delete(){}
     public function select(){}
+
     
 }
 
