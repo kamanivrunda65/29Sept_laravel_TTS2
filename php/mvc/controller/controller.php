@@ -1,12 +1,12 @@
 <?php
 require_once("model/model.php");
 class controller extends model{
-
+    public $BaseURL="http://localhost/29Sept_laravel_TTS2/php/mvc/assets";
 
     public function __construct(){
         parent::__construct();
         ob_start();
-        $BaseURL="http://localhost/29Sept_laravel_TTS2/php/mvc/";
+       
         if(isset($_SERVER['PATH_INFO'])){
             switch($_SERVER['PATH_INFO']){
                 case '/home':
@@ -64,6 +64,16 @@ class controller extends model{
                             echo "Error";
                         }
                     }
+                    break;
+                case '/admindashboard':
+                    include_once('views/admin/adminheader.php');
+                    include_once('views/admin/admindashboard.php');
+                    include_once('views/admin/adminfooter.php');
+                    break;
+                case '/signup':
+                    include_once('views/header.php');
+                    include_once('views/signup.php');
+                    include_once('views/footer.php');
                     break;
                 default :
                     
