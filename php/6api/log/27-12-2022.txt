@@ -1,0 +1,3 @@
+Access denied for user 'root1'@'localhost' (using password: NO) -----Date&Time :27-12-2022 12:10:41 PM
+Access denied for user 'root1'@'localhost' (using password: NO) -----Date&Time :27-12-2022 12:14:26 PM
+Access denied for user 'root1'@'localhost' (using password: NO) -----Date&Time :27-12-2022 12:16:00 PM

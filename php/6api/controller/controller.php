@@ -5,7 +5,7 @@ class controller extends model{
 
     public function __construct(){
         parent::__construct();
-        ob_start();
+    
        
         if(isset($_SERVER['PATH_INFO'])){
             switch($_SERVER['PATH_INFO']){
@@ -14,15 +14,12 @@ class controller extends model{
                     include_once('views/mainpage.php');
                     include_once('views/footer.php');
                     break;
-                 case '/about':
-                    include_once('views/header.php');
-                    include_once('views/about.php');
-                    include_once('views/footer.php');
-                    break;
-                 case '/apicalling':
-                    include_once('views/header.php');
-                    include_once('views/apicalling.php');
-                    include_once('views/footer.php');
+                 case '/allusers':
+                    $Res = $this->select("users");
+                    // echo "<pre>";
+                    // print_r($Res);
+                    // echo "</pre>";
+                    echo json_encode($Res);//print as line
                     break;
                  case '/contact':
                     include_once('views/header.php');
@@ -88,7 +85,7 @@ class controller extends model{
         else{
             header("location:home");
         }
-        ob_flush();
+    
 
     }
 }

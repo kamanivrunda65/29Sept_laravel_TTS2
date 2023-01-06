@@ -34,7 +34,7 @@ class model{
         //$id=$table."_id";
         //$date=date('d-m-Y H:i:s A');
         $SQL="INSERT INTO $table ($arraykey,date) VALUES ('$arrayvalue','".date('d-m-Y H:i:s A')."')";
-        print_r($SQL);
+        //print_r($SQL);
         $SQLEx=$this->connection->query($SQL);
         if ($SQLEx > 0) {
             $ResponseData['Code']="1";

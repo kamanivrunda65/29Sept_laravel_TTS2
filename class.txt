@@ -72,7 +72,7 @@ SELECT * from student where Name like concat('%',snamechar,'%')
 
 SET @p0='j'; CALL `getdataendwith`(@p0); SELECT @p0 AS `snamechar`;
 
-CREATE TRIGGER studentdatabk BEFORE UPDATE ON student FOR EACH ROW insert INTO studentdatabk SET Sid=OLD.Sid, Mobileno=OLD.Mobileno, date=now()
+==>CREATE TRIGGER studentdatabk BEFORE UPDATE ON student FOR EACH ROW insert INTO studentdatabk SET Sid=OLD.Sid, Mobileno=OLD.Mobileno, date=now()
 
 CREATE PROCEDURE getmaxsalary(INOUT dept varchar(50)) SELECT DEPARTMENT,MAX(SALARY) MAX_SALARY FROM employee WHERE DEPARTMENT= dept
 
