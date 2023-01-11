@@ -24,14 +24,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		}
 	</script>
 	<!--//tags -->
-	<link href="assets/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-	<link href="assets/css/style.css" rel="stylesheet" type="text/css" media="all" />
-	<link href="assets/css/font-awesome.css" rel="stylesheet">
+	<link href="<?php echo $this->BaseURLDynamic;?>css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="<?php echo $this->BaseURLDynamic;?>css/style.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="<?php echo $this->BaseURLDynamic;?>css/font-awesome.css" rel="stylesheet">
 	<!--pop-up-box-->
-	<link href="assets/css/popuo-box.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="<?php echo $this->BaseURLDynamic;?>css/popuo-box.css" rel="stylesheet" type="text/css" media="all" />
 	<!--//pop-up-box-->
 	<!-- price range -->
-	<link rel="stylesheet" type="text/css" href="assets/css/jquery-ui1.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo $this->BaseURLDynamic;?>css/jquery-ui1.css">
 	<!-- fonts -->
 	<link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800" rel="stylesheet">
 </head>
@@ -51,7 +51,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<a href="index  ">
 						<span>G</span>rocery
 						<span>S</span>hoppy
-						<img src="assets/images/logo2.png" alt=" ">
+						<img src="<?php echo $this->BaseURLDynamic;?>images/logo2.png" alt=" ">
 					</a>
 				</h1>
 			</div>
@@ -589,7 +589,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 												</ul>
 											</div>
 											<div class="col-sm-4 multi-gd-img">
-												<img src="assets/images/nav.png" alt="">
+												<img src="<?php echo $this->BaseURLDynamic;?>images/nav.png" alt="">
 											</div>
 											<div class="clearfix"></div>
 										</div>

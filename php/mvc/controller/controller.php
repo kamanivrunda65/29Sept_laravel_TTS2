@@ -6,7 +6,9 @@ class controller extends model{
     public function __construct(){
         parent::__construct();
         ob_start();
-       
+        $uriarray = explode("/",$_SERVER['REQUEST_URI']);
+        $this->BaseURLDynamic = $_SERVER['REQUEST_SCHEME']."://".$_SERVER['HTTP_HOST']."/".$uriarray[1]."/".$uriarray[2]."/".$uriarray[3]."/assets/";
+        
         if(isset($_SERVER['PATH_INFO'])){
             switch($_SERVER['PATH_INFO']){
                 case '/home':
@@ -57,9 +59,10 @@ class controller extends model{
                     include_once('views/header.php');
                     include_once('views/signup.php');
                     include_once('views/footer.php');
+
                     if(isset($_REQUEST['register'])){
                         array_pop($_REQUEST);//to cut last add request name(submit button)
-                        array_pop($_REQUEST);
+                        
                         //print_r($_REQUEST);
                         $Res=$this->insert("users",$_REQUEST);
                         if($Res['Code'] == 1){
@@ -69,11 +72,18 @@ class controller extends model{
                             echo "Error";
                         }
                     }
+
                     break;
                 case '/admindashboard':
                     include_once('views/admin/adminheader.php');
                     include_once('views/admin/admindashboard.php');
                     include_once('views/admin/adminfooter.php');
+                    break;
+                case '/userstable':
+                    include_once('views/admin/adminheader.php');
+                    include_once('views/admin/users.php');
+                    include_once('views/admin/adminfooter.php');
+                   
                     break;
                 case '/signup':
                     include_once('views/header.php');

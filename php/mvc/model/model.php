@@ -48,9 +48,18 @@ class model{
         return $ResponseData;
 
     }
+
+
+    
+
+  
+
     public function login($username,$password){
         $SQL="SELECT * FROM users WHERE password='$password' AND ( name='$username' OR email='$username')";
         $SQLEx=$this->connection->query($SQL);
+        // echo "<pre>";
+        // print_r($SQLEx);
+        // echo "</pre>";
         if ($SQLEx->num_rows > 0) {
             // $SQLExFetch = $SQLEx->fetch_all(); //mulitple data with array formate
             // $SQLExFetch = $SQLEx->fetch_array(); //single data with numeric and associative array formate
@@ -78,8 +87,10 @@ class model{
     }
     public function update(){}
     public function delete(){}
-    public function select(){}
 
+
+
+   
     
 }
 

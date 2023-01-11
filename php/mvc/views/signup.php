@@ -26,10 +26,8 @@
 							<div class="styled-input">
 								<input type="password" placeholder="Password" name="password" id="password1" required="">
 							</div>
-							<div class="styled-input">
-								<input type="password" placeholder="Confirm Password" name="Confirm Password" id="password2" required="">
-							</div>
-							<input type="submit" name="register" value="Sign Up">
+							
+							<input type="submit" name="register" value="Sign Up"  name="signup-btn" id="signup-btn">
 						</form>
 						<p>
 							<a href="#">By clicking register, I agree to your terms</a>
