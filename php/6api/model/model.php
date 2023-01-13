@@ -28,28 +28,51 @@ class model{
             }
     
     }
-    // public function insert($table,$data){
-    //     $arraykey=implode(",",array_keys($data));
-    //     $arrayvalue=implode("','",$data);
-    //     //$id=$table."_id";
-    //     //$date=date('d-m-Y H:i:s A');
-    //     $SQL="INSERT INTO $table ($arraykey,date) VALUES ('$arrayvalue','".date('d-m-Y H:i:s A')."')";
-    //     //print_r($SQL);
-    //     $SQLEx=$this->connection->query($SQL);
-    //     if ($SQLEx > 0) {
-    //         $ResponseData['Code']="1";
-    //         $ResponseData['Msg']="Success";
-    //         $ResponseData['Data']="1";
-    //     }else{
-    //         $ResponseData['Code']="0";
-    //         $ResponseData['Msg']="Error while inserting";
-    //         $ResponseData['Data']="0";
-    //     }
-    //     return $ResponseData;
+    public function insert($table,$data){
+        $arraykey=implode(",",array_keys($data));
+        $arrayvalue=implode("','",$data);
+        //$id=$table."_id";
+        //$date=date('d-m-Y H:i:s A');
+        $SQL="INSERT INTO $table ($arraykey,date) VALUES ('$arrayvalue','".date('d-m-Y H:i:s A')."')";
+        //print_r($SQL);
+        $SQLEx=$this->connection->query($SQL);
+        if ($SQLEx > 0) {
+            $ResponseData['Code']="1";
+            $ResponseData['Msg']="Success";
+            $ResponseData['Data']="1";
+        }else{
+            $ResponseData['Code']="0";
+            $ResponseData['Msg']="Error while inserting";
+            $ResponseData['Data']="0";
+        }
+        return $ResponseData;
+    }
 
-    // }
-    // public function login($username,$password){
-    //     $SQL="SELECT * FROM users WHERE password='$password' AND ( name='$username' OR email='$username')";
+
+    public function login($username,$password){
+        $SQL="SELECT * FROM users WHERE password='$password' AND ( name='$username' OR email='$username')";
+        $SQLEx=$this->connection->query($SQL);
+        //print_r($SQL);
+        if ($SQLEx->num_rows > 0) {
+            
+            while ($SQLExFetch = $SQLEx->fetch_object()) {
+                $SqlFetchData[]=$SQLExFetch;
+            }
+            $ResponseData['Code']="1";
+            $ResponseData['Msg']="Success";
+            $ResponseData['Data']=$SqlFetchData;
+        }
+        else {    
+            $ResponseData['Code']="0";
+            $ResponseData['Msg']="Error while inserting";
+            $ResponseData['Data']="0";
+        }
+        
+        return $ResponseData;
+
+    }
+    // public function select($table){
+    //     $SQL="SELECT * FROM $table"; 
     //     $SQLEx=$this->connection->query($SQL);
     //     if ($SQLEx->num_rows > 0) {
             
@@ -69,27 +92,6 @@ class model{
     //     return $ResponseData;
 
     // }
-    public function select($table){
-        $SQL="SELECT * FROM $table"; 
-        $SQLEx=$this->connection->query($SQL);
-        if ($SQLEx->num_rows > 0) {
-            
-            while ($SQLExFetch = $SQLEx->fetch_object()) {
-                $SqlFetchData[]=$SQLExFetch;
-            }
-            $ResponseData['Code']="1";
-            $ResponseData['Msg']="Success";
-            $ResponseData['Data']=$SqlFetchData;
-        }
-        else {    
-            $ResponseData['Code']="0";
-            $ResponseData['Msg']="Error while inserting";
-            $ResponseData['Data']="0";
-        }
-        
-        return $ResponseData;
-
-    }
     // public function update(){}
     // public function delete(){}
     // public function select(){}

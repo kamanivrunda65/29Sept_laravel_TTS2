@@ -22,7 +22,7 @@
 						<p>
 							Come join the Grocery Shoppy! Let's set up your Account.
 						</p>
-						<form action="#" method="post">
+						<form  method="post" id="registForm">
 							<div class="styled-input agile-styled-input-top">
 								<input type="text" placeholder="Name" name="name" onblur="checkreq(this)" required>
 							</div>
@@ -36,7 +36,7 @@
 								<input type="password" placeholder="Password" name="password" onblur="checkreq(this)" id="password1" required>
 							</div>
 							
-							<input type="submit" name="register" value="Sign Up"  name="signup-btn" >
+							<input type="submit" name="register" value="Sign Up" onclick="registerData()" >
 						</form>
 						<p>
 							<a href="#">By clicking register, I agree to your terms</a>
@@ -53,18 +53,18 @@
 		function checkreq(e){//check value of field
 			const el=e;
 			const newEl = document.createElement("span");//create span for warning
-        const newContent = document.createTextNode("This field is required");//warning text
-        newEl.appendChild(newContent);//change or append warning text
-        if (el.value == "") {   //if value is null
+            const newContent = document.createTextNode("This field is required");//warning text
+            newEl.appendChild(newContent);//change or append warning text
+            if (el.value == "") {   //if value is null
             if (e.nextSibling.nodeName == "SPAN") {
                 e.nextSibling.remove();  //remove old span and create new
                 el.after(newEl);
             } else {
                 el.after(newEl);//if any span is not in field then create new
             }
-        } else {
-            e.nextSibling.remove();//if value enter in that feild
-        }
+            } else {
+           // e.nextSibling.remove()//if value enter in that feild
+            }
 		}
 
 
@@ -95,4 +95,26 @@
             }
         }
     })
+
+
+
+	function registerData() {
+        event.preventDefault();     //not send defalt value 
+        let FormData = $("#registForm").serializeArray()    // convert form value in name : key ,value : input data
+        //console.log(FormData);
+        var result = {};
+        $.each(FormData, function() {
+            result[this.name] = this.value;   //by foreach method convert form data in key: value
+        });
+        //console.log(result);
+        let header_for_post = {
+            method: 'POST', // *GET, POST, PUT, DELETE, etc.
+           
+            body: JSON.stringify(result) // body data type must match "Content-Type" header
+        }
+        //console.log(header_for_post);
+         fetch("http://localhost/29Sept_laravel_TTS2/php/6api/registration", header_for_post).then(res => res.json()).then((response) => {
+            console.log(response);
+         })
+    }
 	</script>
