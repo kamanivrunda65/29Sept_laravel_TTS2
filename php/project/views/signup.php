@@ -113,8 +113,8 @@
             body: JSON.stringify(result) // body data type must match "Content-Type" header
         }
         //console.log(header_for_post);
-         fetch("http://localhost/29Sept_laravel_TTS2/php/6api/registration", header_for_post).then(res => res.json()).then((response) => {
-            console.log(response);
+         fetch("http://localhost/29Sept_laravel_TTS2/php/6api/registration", header_for_post).then(response => response.json()).then((res) => {
+            console.log(res);
          })
     }
 	</script>
