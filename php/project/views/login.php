@@ -75,7 +75,10 @@
 
 
          fetch("http://localhost/29Sept_laravel_TTS2/php/6api/login", header_for_post).then(response => response.json()).then((res) => {
-             console.log(res);
+             console.log(res.Code);
+             if(res.Code==1){
+              window.location.href="http://localhost/29Sept_laravel_TTS2/php/project/home";
+             }
             //data=  $.parseJSON(res)
             //console.log(res.getValue(Code));
          })

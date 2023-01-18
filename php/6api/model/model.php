@@ -71,27 +71,27 @@ class model{
         return $ResponseData;
 
     }
-    // public function select($table){
-    //     $SQL="SELECT * FROM $table"; 
-    //     $SQLEx=$this->connection->query($SQL);
-    //     if ($SQLEx->num_rows > 0) {
+    public function select($table){
+        $SQL="SELECT * FROM $table"; 
+        $SQLEx=$this->connection->query($SQL);
+        if ($SQLEx->num_rows > 0) {
             
-    //         while ($SQLExFetch = $SQLEx->fetch_object()) {
-    //             $SqlFetchData[]=$SQLExFetch;
-    //         }
-    //         $ResponseData['Code']="1";
-    //         $ResponseData['Msg']="Success";
-    //         $ResponseData['Data']=$SqlFetchData;
-    //     }
-    //     else {    
-    //         $ResponseData['Code']="0";
-    //         $ResponseData['Msg']="Error while inserting";
-    //         $ResponseData['Data']="0";
-    //     }
+            while ($SQLExFetch = $SQLEx->fetch_object()) {
+                $SqlFetchData[]=$SQLExFetch;
+            }
+            $ResponseData['Code']="1";
+            $ResponseData['Msg']="Success";
+            $ResponseData['Data']=$SqlFetchData;
+        }
+        else {    
+            $ResponseData['Code']="0";
+            $ResponseData['Msg']="Error while inserting";
+            $ResponseData['Data']="0";
+        }
         
-    //     return $ResponseData;
+        return $ResponseData;
 
-    // }
+    }
     // public function update(){}
     // public function delete(){}
     // public function select(){}

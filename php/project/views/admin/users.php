@@ -33,24 +33,17 @@
         }}'>
         <thead>
           <tr>
-            <th data-breakpoints="xs">ID</th>
+           
             <th>Name</th>
             <th>Email</th>
+            <th>Mobile Number</th>
             <th data-breakpoints="xs">Password</th>
             <th data-breakpoints="xs">Date</th>
-            <th data-breakpoints="xs sm md" data-title="DOB">Change</th>
+            <th data-breakpoints="xs sm md" data-title="DOB">Role id</th>
           </tr>
         </thead>
-        <tbody >
-           
-          <tr data-expanded="true">
-            <td>1</td>
-            <td>Dennise</td>
-            <td>Fuhrman</td>
-            <td>High School History Teacher</td>
-            
-            <td>July 25th 1960</td>
-          </tr>
+        <tbody id="displaydata">
+        
           
           
           
@@ -82,8 +75,20 @@
  <!-- footer -->
 		  <div class="footer">
 			<div class="wthree-copyright">
-			  <p>© 2017 Visitors. All rights reserved | Design by <a href="http://w3layouts.com/">W3layouts</a></p>
+			  
 			</div>
 		  </div>
   <!-- / footer -->
 </section>
+<script>
+		
+		fetch("http://localhost/29Sept_laravel_TTS2/php/6api/allusers").then(response=>response.json()).then((res)=>{
+			   htmltrtd = '';
+				res.Data.forEach(element => {
+					htmltrtd += "<tr><td>"+element.name+"</td><td>"+element.email+"</td><td>"+element.mobile_no+"</td><td>"+element.password+"</td><td>"+element.date+"</td><td>"+element.role_id+"</td></tr>"
+					
+				})
+				 console.log(htmltrtd);
+				 $("#displaydata").html(htmltrtd)
+		})
+	</script>

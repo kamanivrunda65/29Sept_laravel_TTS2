@@ -60,7 +60,8 @@ if(typeof _bsa !== 'undefined' && _bsa) {
 </script>
 
 <meta name="robots" content="noindex">
-<body><link rel="stylesheet" href="../../../../../../assests/assets/admin_assets/css/font-awesome.min.css">
+<body>
+    <!-- <link rel="stylesheet" href="../../../../../../assests/assets/admin_assets/css/font-awesome.min.css"> -->
 <!-- New toolbar-->
 <style>
 * {

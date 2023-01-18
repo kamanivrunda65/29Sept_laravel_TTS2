@@ -67,16 +67,7 @@ class controller extends model{
                         }
                     }
                     break;
-                case '/admindashboard':
-                    include_once('views/admin/adminheader.php');
-                    include_once('views/admin/admindashboard.php');
-                    include_once('views/admin/adminfooter.php');
-                    break;
-                case '/signup':
-                    include_once('views/header.php');
-                    include_once('views/signup.php');
-                    include_once('views/footer.php');
-                    break;
+              
                 case '/registration' :
                    //echo "<pre>";
                 
@@ -91,7 +82,7 @@ class controller extends model{
                   break;
 
 
-                  case '/login' :
+                case '/login' :
                     //echo "<pre>";
                     //$Res = $this->login($_POST['name'],$_POST['password']);
                     $data = json_decode(file_get_contents('php://input'), true);//decode input data which get from input request
@@ -103,10 +94,18 @@ class controller extends model{
                         echo "User Name and Password is required";
                     }
                     
-                    break;  
+                    break; 
+                case '/users':
+                
+                    $Res = $this->select("users");
+                  
+                    echo json_encode($Res);
+                    break;     
                 default :
                
                     break;
+                    
+
             }
         }
         else{
