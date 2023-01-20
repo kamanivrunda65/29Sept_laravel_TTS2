@@ -32,9 +32,9 @@ class model{
         $arraykey=implode(",",array_keys($data));
         $arrayvalue=implode("','",$data);
         //$id=$table."_id";
-        //$date=date('d-m-Y H:i:s A');
-        $SQL="INSERT INTO $table ($arraykey,date) VALUES ('$arrayvalue','".date('d-m-Y H:i:s A')."')";
-        //print_r($SQL);
+        //$date=date('d-m-Y H:i:s A');//YYYY-MM-DD HH:MM:SS
+        $SQL="INSERT INTO $table ($arraykey) VALUES ('$arrayvalue')";
+        print_r($SQL);
         $SQLEx=$this->connection->query($SQL);
         if ($SQLEx > 0) {
             $ResponseData['Code']="1";

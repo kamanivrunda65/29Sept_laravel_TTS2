@@ -33,13 +33,14 @@
         }}'>
         <thead>
           <tr>
-           
+            <th>NO</th>           
             <th>Name</th>
             <th>Email</th>
             <th>Mobile Number</th>
             <th data-breakpoints="xs">Password</th>
             <th data-breakpoints="xs">Date</th>
             <th data-breakpoints="xs sm md" data-title="DOB">Role id</th>
+            <th>Change</th>
           </tr>
         </thead>
         <tbody id="displaydata">
@@ -84,11 +85,12 @@
 		
 		fetch("http://localhost/29Sept_laravel_TTS2/php/6api/allusers").then(response=>response.json()).then((res)=>{
 			   htmltrtd = '';
+         count=1
 				res.Data.forEach(element => {
-					htmltrtd += "<tr><td>"+element.name+"</td><td>"+element.email+"</td><td>"+element.mobile_no+"</td><td>"+element.password+"</td><td>"+element.date+"</td><td>"+element.role_id+"</td></tr>"
-					
+					htmltrtd += "<tr><td>count</td><td>"+element.name+"</td><td>"+element.email+"</td><td>"+element.mobile_no+"</td><td>"+element.password+"</td><td>"+element.date+"</td><td>"+element.role_id+"</td><td> <button onclick="deleteuser(${element.id})">delete</button> </td></tr>"
+					count++;
 				})
 				 console.log(htmltrtd);
 				 $("#displaydata").html(htmltrtd)
-		})
+		});
 	</script>

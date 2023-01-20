@@ -24,6 +24,9 @@
 								<input type="email" placeholder="E-mail" name="email" required="">
 							</div>
 							<div class="styled-input">
+								<input type="text" placeholder="mobile number" name="mobile_no" required="">
+							</div>
+							<div class="styled-input">
 								<input type="password" placeholder="Password" name="password" id="password1" required="">
 							</div>
 							
