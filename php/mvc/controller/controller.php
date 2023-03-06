@@ -31,6 +31,10 @@ class controller extends model{
                     include_once('views/contact.php');
                     include_once('views/footer.php');
                     break;
+                case '/new':
+                    include_once('views/admin/newhome.php');
+                    
+                    break;
                 case '/login':
                     include_once('views/header.php');
                     include_once('views/login.php');

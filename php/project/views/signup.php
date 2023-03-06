@@ -59,11 +59,11 @@
             if (e.nextSibling.nodeName == "SPAN") {
                 e.nextSibling.remove();  //remove old span and create new
                 el.after(newEl);
-            } else {
+            	} else {
                 el.after(newEl);//if any span is not in field then create new
-            }
+            	}
             } else {
-           // e.nextSibling.remove()//if value enter in that feild
+            	//e.nextSibling.remove();//if value enter in that feild
             }
 		}
 

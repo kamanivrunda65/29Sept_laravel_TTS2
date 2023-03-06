@@ -88,7 +88,10 @@
          count=1
 				res.Data.forEach(element => {
 					htmltrtd += "<tr><td>count</td><td>"+element.name+"</td><td>"+element.email+"</td><td>"+element.mobile_no+"</td><td>"+element.password+"</td><td>"+element.date+"</td><td>"+element.role_id+"</td><td> <button onclick="deleteuser(${element.id})">delete</button> </td></tr>"
-					count++;
+					
+          
+          
+          count++;
 				})
 				 console.log(htmltrtd);
 				 $("#displaydata").html(htmltrtd)
